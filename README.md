@@ -1,4 +1,4 @@
-# Advanced Repository Pattern in Python
+# SOLID sold
 
 The `solid_sold` package provides a generic implementation of the Repository pattern in Python, aimed at creating a flexible and robust data access layer for your applications.
 
