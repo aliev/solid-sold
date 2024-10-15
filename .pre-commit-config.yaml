@@ -1,0 +1,45 @@
+default_language_version:
+  python: python3
+
+fail_fast: false
+
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v5.0.0
+    hooks:
+      - id: trailing-whitespace
+        exclude: ^(setup\.cfg)
+      - id: end-of-file-fixer
+        exclude: ^(setup\.cfg)
+      - id: check-merge-conflict
+      - id: detect-private-key
+
+  - repo: https://github.com/psf/black
+    rev: 24.10.0
+    hooks:
+      - id: black
+        name: Black
+        args: [-t, "py310"]
+
+  - repo: https://github.com/pycqa/flake8
+    rev: 6.1.0
+    hooks:
+      - id: flake8
+        entry: pflake8
+        additional_dependencies: [pyproject-flake8]
+
+  - repo: https://github.com/pycqa/isort
+    rev: 5.13.2
+    hooks:
+      - id: isort
+        name: Isort
+
+  - repo: local
+    hooks:
+      - id: mypy
+        name: mypy
+        entry: "mypy"
+        language: system
+        types: [python]
+        require_serial: true
+        verbose: false

@@ -1,0 +1,72 @@
+[project]
+name = "solid-sold"
+version = "0.0.1"
+description = "SOLID implementation of advanced repository patterns in Python."
+requires-python = ">=3.9"
+authors = [
+  { name="Ali Aliyev", email="ali@aliev.me" },
+]
+readme = "README.md"
+keywords = [
+  "solid",
+  "repository",
+  "design pattern",
+  "data access layer",
+  "python",
+  "transaction management",
+  "type safety",
+  "database abstraction",
+  "asyncio",
+  "CRUD operations"
+]
+classifiers = ['Development Status :: 5 - Production/Stable',
+               'Intended Audience :: Developers',
+               'Programming Language :: Python',
+               'License :: OSI Approved :: MIT License',
+               'Natural Language :: English',
+               'Operating System :: OS Independent',
+               'Programming Language :: Python',
+               'Programming Language :: Python :: 3',
+               'Programming Language :: Python :: 3.8',
+               'Programming Language :: Python :: 3.9',
+               'Programming Language :: Python :: 3.10',
+               'Framework :: AsyncIO',
+               'Topic :: Software Development :: Libraries :: Python Modules',
+               'Topic :: Utilities']
+dependencies = [
+  "typing_extensions"
+]
+
+[project.optional-dependencies]
+dev = [
+  "pre-commit",
+  "wheel",
+  "twine",
+  "build",
+  "pytest",
+  "pytest-cov",
+  "mypy"
+]
+
+[tool.setuptools]
+packages = ["solid_sold"]
+
+[project.urls]
+"Homepage" = "https://github.com/aliev/solid-sold"
+"Bug Tracker" = "https://github.com/aliev/solid-sold/issues"
+
+[tool.isort]
+profile = "black"
+
+[tool.mypy]
+warn_no_return = false
+disallow_untyped_defs = false
+allow_redefinition = true
+
+[tool.flake8]
+max-line-length = 120
+extend-select = "B950"
+extend-ignore = "E203,E501,E701"
+
+[tool.pytest.ini_options]
+addopts = "-s --strict-markers -vv --cache-clear --maxfail=1 --cov=aioshutdown --cov-report=term --cov-report=html --cov-branch --no-cov-on-fail"
