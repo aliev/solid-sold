@@ -109,6 +109,13 @@ This class is still generic, but it’s already useful even though it doesn't ha
 
 A complete working example with SQLite support can be found in [examples/user](examples/user).
 
+Running sqlite example:
+
+```bash
+pip install -e ."[dev]"
+python -m examples.user.sqlite
+```
+
 ## Contributing
 
 Contributions are welcome! Please submit a Pull Request.

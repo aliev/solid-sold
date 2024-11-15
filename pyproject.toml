@@ -34,7 +34,8 @@ classifiers = ['Development Status :: 5 - Production/Stable',
                'Topic :: Software Development :: Libraries :: Python Modules',
                'Topic :: Utilities']
 dependencies = [
-  "typing_extensions"
+  "aiosqlite>=0.20.0",
+  "typing_extensions",
 ]
 
 [project.optional-dependencies]
